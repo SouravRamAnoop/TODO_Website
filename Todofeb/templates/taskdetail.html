@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/css/background.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+
+        .detail{
+            font-family: Arial, sans-serif;
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: vh;
+            margin: 0;
+            padding: 0;
+          }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: inherit;
+            padding: 10px 20px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .btn a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+<h1>Task Details</h1>
+<div class="detail">
+<form method="post" action="">
+    <h2>Task: {{task}}</h2>
+    {% if task.completed %}
+        <p>Status: Completed</p>
+    {% else %}
+        <p>Status: Pending</p>
+    {% endif %}
+</form>
+</div>
+<div class="btn">
+    <a href="{% url 'task' %}">Go Back</a>
+</div>
+</body>
+</html>
+
+</body>
+</html>

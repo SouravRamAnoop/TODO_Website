@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        .header-bar {
+            background-color: #f1f1f1;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-bar h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .addtask {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #808080;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .addtask a{
+            color: white;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        .addtask:hover {
+            background-color: #45a049;
+        }
+
+        .content {
+            margin: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        td a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .fa-pencil-square-o, .material-icons, .fa-eye {
+            font-size: 24px;
+            vertical-align: middle;
+        }
+
+        .fa-pencil-square-o {
+            color: green;
+        }
+
+        .material-icons {
+            color: red;
+        }
+
+        .fa-eye {
+            color: indigo;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>My Todo list</h1>
+
+<div class="header-bar">
+    <div>
+        <h1>Hello, {{user.username | title }}</h1>
+        <button class="addtask"><a href="{% url 'task-create' %}">Add Task</a></button>
+    </div>
+    {% if request.user.is_authenticated %}
+        <button class="addtask" onclick="alert('logout succesfully')"><a href="{% url 'logout' %}">Logout</a></button>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>-
+    {% endif %}
+</div>
+<div class="content">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>TASKS</th>
+            <th>DESCRIPTION</th>
+            <th>COMPLETED</th>
+            <th>TIME</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+            <th>VIEW</th>
+        </tr>
+
+        {% for tasks in task %}
+
+        <tr>
+            <td>{{tasks.id}}</td>
+            <td>{{tasks.title}}</td>
+            <td>{{tasks.description}}</td>
+            <td>{{tasks.completed}}</td>
+            <td>{{tasks.created}}</td>
+
+            <td><a href="{% url 'task-update' tasks.id %}"><i class="fa fa-pencil-square-o"></i></a></td>
+            <td><a href="{% url 'task-delete' tasks.id %}"><i class="material-icons">delete</i></a></td>
+            <td><a href="{% url 'task-details' tasks.id %}"><i class="fa fa-eye"></i></a></td>
+
+        </tr>
+
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>

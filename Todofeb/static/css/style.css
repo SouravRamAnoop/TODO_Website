@@ -1,0 +1,207 @@
+
+/* Body styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+/* Heading styling */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Form styling */
+.card-body {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width: 400px;
+    height:300px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* CSRF token styling */
+input[name="csrfmiddlewaretoken"] {
+    display: none;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+
+
+.todo-form {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.todo-form input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.todo-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ccc;
+}
+
+.todo-list li:last-child {
+    border-bottom: none;
+}
+
+.todo-list li span {
+    flex-grow: 1;
+}
+
+.todo-list li button {
+    padding: 5px 10px;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+h1.logo {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+nav {
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.nav-links li a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.nav-links li a:hover {
+    color: #4CAF50;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #333;
+}
+
+
+
+/*
+.content{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+
+h1{
+    text-align:center;
+    color:black;
+}
+
+body .header-bar .addtask{
+    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.content table{
+    width:100%;
+    align-items:center;
+    border:1px solid black;
+    margin-bottom:2rem;
+}
+.content table th{
+     border:1px solid black;
+     background:red;
+     padding:2rem;
+     text-align=center;
+}
+
+.content table td{
+     border:1px solid black;
+     padding:1.5rem;
+}
+
+.btn{
+    padding: .7rem 3rem;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 2rem;
+    border-radius: 5rem;
+}
+
+*/
