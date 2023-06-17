@@ -104,7 +104,7 @@
 <div class="header-bar">
     <div>
         <h1>Hello, {{user.username | title }}</h1>
-        <button class="addtask"><a href="{% url 'task-create' %}">Add Task</a></button>
+        <button class="addtask"><a href="{% url 'task-create' %}">Add Tasks</a></button>
     </div>
     {% if request.user.is_authenticated %}
         <button class="addtask" onclick="alert('logout succesfully')"><a href="{% url 'logout' %}">Logout</a></button>
