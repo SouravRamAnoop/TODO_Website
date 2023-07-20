@@ -109,7 +109,7 @@
     {% if request.user.is_authenticated %}
         <button class="addtask" onclick="alert('logout succesfully')"><a href="{% url 'logout' %}">Logout</a></button>
     {% else %}
-        <a href="{% url 'login' %}">Login</a>-
+        <a href="{% url 'login' %}">Login</a>
     {% endif %}
 </div>
 <div class="content">
